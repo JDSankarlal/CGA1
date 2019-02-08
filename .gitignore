@@ -1,0 +1,6 @@
+*.exe
+*.ilk
+*.pdb
+INFR 2350/OpenGL_Framework/Debug/
+INFR 2350/.vs/
+INFR 2350/OpenGL_Framework/imgui.ini

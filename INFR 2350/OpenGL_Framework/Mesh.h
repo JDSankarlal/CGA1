@@ -1,0 +1,27 @@
+#pragma once
+#include "GL/glew.h"
+#include "Transform.h"
+#include <vector>
+#include "VertexBufferObject.h"
+
+class Mesh
+{
+public:
+	void initMeshSphere(const unsigned int xSlices, const unsigned int ySlices, bool invert = false);
+	
+	bool LoadFromObj(const std::string &file);
+
+	std::vector<vec4> dataVertex;
+	std::vector<vec4> dataTexture;
+	std::vector<vec4> dataNormal;
+	std::vector<vec4> dataColor;
+
+	void draw() const;
+	void Mesh::bind() const;
+	static void Mesh::unbind();
+private:
+	VertexArrayObject vao;
+	bool _IsLoaded = false;
+
+	void uploadToGPU();
+};
